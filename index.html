@@ -4,85 +4,327 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                height: 100vh;
-                display: flex;
-                overflow: hidden;
-                --sb-track-color: #888d8f;
-                --sb-thumb-color: #222825;
-                --sb-size: 10px;
-            }
-
-
-            .column::-webkit-scrollbar {
-                width: var(--sb-size)
-            }
-
-            .column::-webkit-scrollbar-track {
-                background: var(--sb-track-color);
-                border-radius: 3px;
-            }
-
-            .column::-webkit-scrollbar-thumb {
-                background: var(--sb-thumb-color);
-                border-radius: 3px;
-
-            }
-
-            @supports not selector(::-webkit-scrollbar) {
-                .column {
-                    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-                }
-            }
-
-            .column {
-                flex: 1;
-                padding: 20px;
-                overflow-y: auto;
-                box-sizing: border-box;
-                border-right: 1px solid #ccc;
-            }
-
-            .column:last-child {
-                border-right: none;
-            }
-
-            /* Pour démonstration du scroll */
-            .content {
-                height: 200vh;
-                background: linear-gradient(to bottom, #f0f0f0, #8a8a8a);
-                padding: 20px;
-            }
-        </style>
+        <title>Mémoire</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <div class="column">
-            <div class="content">
-                <h2>Colonne 1</h2>
+        <div class="column-layout">
+            <div class="column">
+                <h2>Schéma</h2>
                 <p>Contenu de la première colonne...</p>
-                <!-- Ajoutez plus de contenu pour tester le défilement -->
+            </div>
+
+            <div class="column">
+                <h2>Texte</h2>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux <a href="#image1" class="image-link">cette belle image 01</a>
+                    texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte <a href="#image2" class="image-link">cette belle image 02</a>.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections <a href="#image3" class="image-link">cette belle image 03</a>
+                    1.10.32
+                    et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, <a href="#image4" class="image-link">cette belle image 04</a>
+                    le
+                    Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait <a href="#image5" class="image-link">cette belle image 05</a> des sections
+                    1.10.32
+                    et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
+                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand
+                    un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de
+                    polices de texte.</p>
+
+                <p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il
+                    trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le
+                    rendant vieux de 2000 ans.</p>
+
+                <p>Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus
+                    obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot
+                    dans la littérature classique, découvrit la source incontestable du Lorem Ipsum.</p>
+
+                <p>Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes
+                    Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un
+                    traité sur la théorie de l'éthique.</p>
+
+                <p>Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section
+                    1.10.32. L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous
+                    pour les curieux.</p>
+            </div>
+
+            <div class="column">
+                <h2>Annexes</h2>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <img id="image1" src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <p>Lien image 01</p>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <img id="image2" src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <p>Lien image 02</p>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img id="image3" src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <p>Lien image 03</p>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <img id="image4" src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <p>Lien image 04</p>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 2">
+                <img id="image5" src="https://placehold.co/400x300/orange/white" alt="Image placeholder 3">
+                <p>Lien image 05</p>
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 4">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 5">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 6">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 7">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 8">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 9">
+                <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 10">
             </div>
         </div>
 
-        <div class="column">
-            <div class="content">
-                <h2>Colonne 2</h2>
-                <p>Contenu de la deuxième colonne...</p>
-            </div>
-        </div>
 
-        <div class="column">
-            <div class="content">
-                <h2>Colonne 3</h2>
-                <p>Contenu de la troisième colonne...</p>
-            </div>
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Gestion des clics sur les liens
+                document.querySelectorAll('.image-link').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        // Récupère l'ID de l'image cible
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetImage = document.getElementById(targetId);
+
+                        // Défilement vers l'image
+                        targetImage.scrollIntoView();
+
+                        // Ajoute l'effet de mise en évidence
+                        targetImage.classList.add('highlight');
+
+                        // Retire l'effet après l'animation
+                        setTimeout(() => {
+                            targetImage.classList.remove('highlight');
+                        }, 500);
+                    });
+                });
+            });
+        </script>
+
+
+
     </body>
 
 </html>
