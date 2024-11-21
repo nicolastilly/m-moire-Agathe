@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
     <head>
         <meta charset="UTF-8">
@@ -8,52 +8,81 @@
 
         <style>
             body {
-                width: 100%;
+                margin: 0;
+                padding: 0;
                 height: 100vh;
-                display: grid;
-                align-content: center;
-                justify-items: center;
+                display: flex;
+                overflow: hidden;
+                --sb-track-color: #888d8f;
+                --sb-thumb-color: #222825;
+                --sb-size: 10px;
             }
 
-            #lien1:hover {
-                fill: red;
-                cursor: pointer;
-                /* stroke: red; */
+
+            .column::-webkit-scrollbar {
+                width: var(--sb-size)
+            }
+
+            .column::-webkit-scrollbar-track {
+                background: var(--sb-track-color);
+                border-radius: 3px;
+            }
+
+            .column::-webkit-scrollbar-thumb {
+                background: var(--sb-thumb-color);
+                border-radius: 3px;
+
+            }
+
+            @supports not selector(::-webkit-scrollbar) {
+                .column {
+                    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+                }
+            }
+
+            .column {
+                flex: 1;
+                padding: 20px;
+                overflow-y: auto;
+                box-sizing: border-box;
+                border-right: 1px solid #ccc;
+            }
+
+            .column:last-child {
+                border-right: none;
+            }
+
+            /* Pour démonstration du scroll */
+            .content {
+                height: 200vh;
+                background: linear-gradient(to bottom, #f0f0f0, #8a8a8a);
+                padding: 20px;
             }
         </style>
     </head>
 
     <body>
+        <div class="column">
+            <div class="content">
+                <h2>Colonne 1</h2>
+                <p>Contenu de la première colonne...</p>
+                <!-- Ajoutez plus de contenu pour tester le défilement -->
+            </div>
+        </div>
 
-        <?xml version="1.0" encoding="UTF-8"?>
-        <svg width="895px" height="564px" viewBox="0 0 895 564" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-            <title>Group</title>
-            <desc>Created with Sketch.</desc>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Desktop-HD" transform="translate(-273.000000, -230.000000)">
-                    <g id="Group" transform="translate(273.000000, 230.000000)">
-                        <a href="https://diagram.website/" target="_blank">
-                            <circle id="lien1" fill="#000000" cx="148" cy="108" r="16"></circle>
-                        </a>
-                        <circle id="lien2" fill="#000000" cx="596" cy="16" r="16"></circle>
-                        <circle id="lien3" fill="#000000" cx="879" cy="353" r="16"></circle>
-                        <circle id="lien4" fill="#000000" cx="612" cy="548" r="16"></circle>
-                        <circle id="lien5" fill="#000000" cx="16" cy="485" r="16"></circle>
-                        <polygon id="lignes" stroke="#000000"
-                            points="156.695312 110.625 595.5625 20.1484375 874.351562 357.851562 613.789062 552.101562 15.75 491.046875">
-                        </polygon>
-                        <text id="lien-1" font-family="FramesPartOne-Regular, Frames Part One" font-size="20"
-                            font-weight="normal" fill="#000000">
-                            <tspan x="123" y="79">lien 1</tspan>
-                        </text>
-                    </g>
-                </g>
-            </g>
-        </svg>
+        <div class="column">
+            <div class="content">
+                <h2>Colonne 2</h2>
+                <p>Contenu de la deuxième colonne...</p>
+            </div>
+        </div>
 
-
+        <div class="column">
+            <div class="content">
+                <h2>Colonne 3</h2>
+                <p>Contenu de la troisième colonne...</p>
+            </div>
+        </div>
     </body>
 
 </html>
