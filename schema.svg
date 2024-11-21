@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="895px" height="564px" viewBox="0 0 895 564" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-273.000000, -230.000000)">
+            <g id="Group" transform="translate(273.000000, 230.000000)">
+                <circle id="lien1" fill="#000000" cx="148" cy="108" r="16"></circle>
+                <circle id="lien2" fill="#000000" cx="596" cy="16" r="16"></circle>
+                <circle id="lien3" fill="#000000" cx="879" cy="353" r="16"></circle>
+                <circle id="lien4" fill="#000000" cx="612" cy="548" r="16"></circle>
+                <circle id="lien5" fill="#000000" cx="16" cy="485" r="16"></circle>
+                <polygon id="lignes" stroke="#000000" points="156.695312 110.625 595.5625 20.1484375 874.351562 357.851562 613.789062 552.101562 15.75 491.046875"></polygon>
+                <text id="lien-1" font-family="FramesPartOne-Regular, Frames Part One" font-size="20" font-weight="normal" fill="#000000">
+                    <tspan x="123" y="79">lien 1</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
