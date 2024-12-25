@@ -1,0 +1,206 @@
+/*--------- TYPOS ---------*/
+
+
+@font-face {
+    font-family: "Caladea Regular";
+    src: url("asset/font/Caladea/Caladea-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: "Caladea Bold";
+    src: url("asset/font/Caladea/Caladea-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "Caladea Bold Italic";
+    src: url("asset/font/Caladea/Caladea-BoldItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "Caladea Italic";
+    src: url("asset/font/Caladea/Caladea-Italic.ttf");
+  }
+  
+  @font-face {
+    font-family: "Wagon Bold";
+    src: url("asset/font/Wagon/Wagon-Bold.otf");
+  }
+
+  @font-face {
+    font-family: "Wagon ExtraLight";
+    src: url("asset/font/Wagon/Wagon-ExtraLight.otf");
+  }
+
+  @font-face {
+    font-family: "Wagon ExtraLightItalic";
+    src: url("asset/font/Wagon/Wagon-ExtraLightItalic.otf");
+  }
+
+
+/*--------- TITRAGES ---------*/
+
+h1{
+    font-family: "Caladea Bold Italic";
+    margin:0;
+}
+
+h2{
+    font-family: "Wagon Bold";
+    color: #d8b1ed;
+    font-size: 1.8em;
+    margin: 5% 0;
+}
+
+h3{
+    font-family: "Wagon ExtraLight";
+    font-weight: lighter;
+    color: #274e12;
+    font-size: 1.5em;
+    margin: 5% 0;
+}
+
+h4{
+    font-family: "Wagon ExtraLightItalic";
+    font-weight: lighter;
+    color: #004b81;
+    font-size: 1.2em;
+    margin: 5% 0;
+}
+
+p{
+    font-family: "Caladea Regular";
+    color: #161b27;
+    font-size: 0.8em;
+    margin:0;
+    text-align:justify;
+    margin: 5% 0;
+}
+
+a{
+  cursor:pointer;
+}
+
+.lien{
+  color: #faadde;
+  background-color: #161b27;
+}
+
+.titre-oeuvre{
+  font-family: "Caladea Italic";
+  color: #274e12;
+}
+
+.artiste{
+  color: #ffb47e;
+  background-color: #161b27;
+}
+
+.auteur{
+  color: #e9e4d8;
+  background-color: #274e12;
+}
+
+.titre-ouvrage{
+  font-family: "Caladea Italic";
+  color: #f5f5f5;
+}
+
+/*--------- PALETTES DE COULEURS ---------*/
+
+/* gris sombre : #161b27;
+blanc cassé : #f5f5f5;
+crème : #e9e4d8;
+bleu marine : #004b81;
+vert sapin : #274e12;
+terre sombre : #343332;
+orange : #ffb47e;
+lilas : #d8b1ed;
+rose : #faadde; */
+
+
+/*--------- GRILLE ---------*/
+
+body{
+margin: 0;
+font-size:4;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+
+/*--------- COLONNE DE GAUCHE ---------*/
+
+.colonne-gauche{
+background-color: #343332;
+}
+
+
+/*--------- COLONNE CENTRALE ---------*/
+
+.colonne-centre{
+  /* height: 100vh; */
+  /* margin: auto; */
+  padding: 10%;
+  background-color: #f5f5f5;
+}
+
+/*--------- COLONNE DE DROITE ---------*/
+
+/* Section Oeuvres */
+
+.section-oeuvres{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligne verticalement les éléments */
+  justify-content: center; /* Centre horizontalement les éléments */
+  gap: 1vw; /* Ajoute de l'espace entre les éléments */
+  background-color: #e9e4d8;
+  padding: 10%;
+}
+
+.section-oeuvres img{
+max-width: 20vw;
+height: auto;
+margin-top:1.5vw;
+}
+
+.descriptions-oeuvres{
+  height: auto;
+  font-family: "Caladea Regular";
+  color: #004b81;
+  font-size: 0.8em;
+}
+
+/* Section Notes */
+
+.section-notes{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  gap: 1vw;
+  background-color: #004b81;
+  color: #e9e4d8;
+  font-family: "Caladea Regular";
+  font-size: 0.8em;
+  padding: 10%; 
+}
+
+/* Section Bibliographie */
+
+.section-bibliographie{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  gap: 1vw;
+  background-color: #ffb47e;
+  color: #004b81;
+  font-family: "Caladea Regular";
+  font-size: 0.8em;
+  padding: 10%; 
+}
