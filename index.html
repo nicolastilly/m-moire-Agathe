@@ -15,6 +15,8 @@
                <img src="plan_racines.svg">
             </div>
 
+            <div class="resizer" id="resizer1"></div>
+
             <div class="column">
                 <h2>Texte</h2>
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
@@ -226,6 +228,8 @@
                     pour les curieux.</p>
             </div>
 
+            <div class="resizer" id="resizer2"></div>
+
             <div class="column">
                 <h2>Annexes</h2>
                 <img src="https://placehold.co/400x300/orange/white" alt="Image placeholder 1">
@@ -321,7 +325,90 @@
                     });
                 });
             });
+
+            /* script du resize */
+
+            
+            document.addEventListener('DOMContentLoaded', function () {
+    const resizers = document.querySelectorAll('.resizer');
+    let isResizing = false;
+    let startX;
+    let currentColumn;
+    let nextColumn;
+    let startWidth;
+    let nextStartWidth;
+
+    const minColumnWidth = 200; // Largeur minimale des colonnes
+
+    // Fonction pour désactiver la sélection
+    function disableSelection() {
+        document.body.style.userSelect = 'none';
+        document.body.style.webkitUserSelect = 'none';  // Pour les navigateurs basés sur WebKit
+        document.body.style.mozUserSelect = 'none';  // Pour Firefox
+    }
+
+    // Fonction pour réactiver la sélection
+    function enableSelection() {
+        document.body.style.userSelect = '';
+        document.body.style.webkitUserSelect = '';  
+        document.body.style.mozUserSelect = '';  
+    }
+
+    resizers.forEach((resizer) => {
+        resizer.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startX = e.clientX;
+            currentColumn = resizer.previousElementSibling;
+            nextColumn = resizer.nextElementSibling;
+
+            startWidth = currentColumn.offsetWidth;
+            nextStartWidth = nextColumn.offsetWidth;
+
+            // Désactive la sélection lors du redimensionnement
+            disableSelection();
+
+            // Ajoute l'événement de mouvement
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', stopResize);
+        });
+    });
+
+    function handleMouseMove(e) {
+        if (!isResizing) return;
+
+        const delta = e.clientX - startX;
+
+        // Nouvelle largeur des colonnes
+        const newCurrentWidth = startWidth + delta;
+        const newNextWidth = nextStartWidth - delta;
+
+        // Vérifie que les colonnes ne dépassent pas leurs limites
+        if (newCurrentWidth >= minColumnWidth && newNextWidth >= minColumnWidth) {
+            // Utiliser `requestAnimationFrame` pour une animation fluide
+            window.requestAnimationFrame(() => {
+                currentColumn.style.width = `${newCurrentWidth}px`;
+                nextColumn.style.width = `${newNextWidth}px`;
+            });
+        }
+    }
+
+    function stopResize() {
+        isResizing = false;
+        
+        // Réactive la sélection après le redimensionnement
+        enableSelection();
+
+        // Supprime les écouteurs d'événements
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', stopResize);
+    }
+});
+
+
+
+
         </script>
+
 
 
 
