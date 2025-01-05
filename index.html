@@ -6,13 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mémoire</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     </head>
 
     <body>
+        <div class="page-titre">
+            <h1>Conversations souterraines <br> Prendre racine avec l’autre</h1>
+        </div>
+
         <div class="column-layout">
             <div class="column">
                 <h2>Schéma</h2>
-               <img src="plan_racines.svg">
+               <!-- <img src="plan_racines.svg"> je n'arrive pas à mettre les liens sur les points de l'illustration via la balise img, donc je met directement le contenu du fichier svg dans le html-->
+               <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1741.71 3681.14">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #d0d0d0;
+                      stroke: #fff;
+                      stroke-miterlimit: 10;
+                      stroke-width: 2.66px;
+                    }
+                    #Point_9{
+                      fill:rgb(236, 35, 35);
+                    }
+                  </style>
+                </defs>
+                <!-- aller chercher le long descriptif de l'illustration dans le fichier svg, momentanément enlevé car lourd -->
+                <circle id="Point_13" class="cls-1" cx="717.97" cy="281.05" r="16.6"/>
+                <circle id="Point_12" class="cls-1" cx="567.97" cy="688.87" r="16.6"/>
+                <circle id="Point_11" class="cls-1" cx="623.85" cy="982.99" r="16.6"/>
+                <circle id="Point_10" class="cls-1" cx="1082.68" cy="774.17" r="16.6"/>
+                <a href="#image5"><circle id="Point_9" class="cls-1" cx="1153.26" cy="1009.46" r="16.6"/></a>
+                <circle id="Point_8" class="cls-1" cx="800.32" cy="1268.28" r="16.6"/>
+                <circle id="Point_7" class="cls-1" cx="638.56" cy="1971.23" r="16.6"/>
+                <circle id="Point_6" class="cls-1" cx="403.26" cy="1465.34" r="16.6"/>
+                <circle id="Point_5" class="cls-1" cx="1232.68" cy="1815.34" r="16.6"/>
+                <circle id="Point_4" class="cls-1" cx="417.97" cy="2430.05" r="16.6"/>
+                <circle id="Point_3" class="cls-1" cx="1015.52" cy="2678.7" r="16.6"/>
+                <circle id="Point_2" class="cls-1" cx="1441.5" cy="2668.28" r="16.6"/>
+                <circle id="Point_1" class="cls-1" cx="1012.09" cy="3406.52" r="16.6"/>
+              </svg>
+              
             </div>
 
             <div class="resizer" id="resizer1"></div>
@@ -302,6 +337,22 @@
 
 
         <script>
+
+            //disparait onclick
+            //  document.getElementById('page-titre').onclick = function() {
+            //     this.style.display = 'none';
+            // };
+            
+            // slide onclick
+            // $(document).ready(function() {
+            // $('.page-titre').on('click', function() {
+            //     $(this).slideUp(200); // 400ms pour l'animation
+            // });
+
+            $('.page-titre').on('click', function() {
+            $(this).fadeOut(500); // Durée de 500ms pour l'effet de fade
+        });
+
             document.addEventListener('DOMContentLoaded', function () {
                 // Gestion des clics sur les liens
                 document.querySelectorAll('.image-link').forEach(link => {
