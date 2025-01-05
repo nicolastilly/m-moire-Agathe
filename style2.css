@@ -67,6 +67,12 @@ h4{
     margin: 5% 0;
 }
 
+h5{
+    font-family: "Caladea Bold";
+    color:#161b27;
+    font-size: 1em;
+}
+
 p{
     font-family: "Caladea Regular";
     color: #161b27;
@@ -75,6 +81,10 @@ p{
     text-align:justify;
     margin: 5% 0;
 }
+
+
+/*--------- LIENS ---------*/
+
 
 a{
   cursor:pointer;
