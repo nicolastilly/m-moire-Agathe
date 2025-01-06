@@ -245,7 +245,7 @@ body {
 }
 
 #titre-sommaire.toggle {
-  color:#161b27;
+  color:#e9e4d8;
 }
 
 #titre-sommaire.toggle:hover {
@@ -293,6 +293,15 @@ body {
     filter: url(#glow-effect);
 }
 
+.glow-circle {
+  transition: filter 0.3s ease-in-out;
+}
+
+.active {
+  filter: url(#glow-effect);
+  fill:#faadde;
+}
+
 
 /* Détail du sommaire */
 
@@ -306,8 +315,9 @@ body {
   box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur */
   /* opacity: 0; */
   transition: opacity 0.3s ease;
-  background-color: #e9e4d8;
-  padding-top: 15%;
+  background-color:#343332;
+  padding-top: 10%;
+  /* opacity:0.75; */
 }
 
 .sommaire-bis.show {
@@ -324,7 +334,7 @@ body {
   display: block;
   text-decoration: none;
   font-family: "Caladea Regular";
-  color: #161b27;
+  color:#e9e4d8;
   font-size: 0.8em;
   margin: 3% 3%;
 }
@@ -333,21 +343,26 @@ body {
   color:#faadde;
 } */
 
+
 .a-h2:hover{
   font-family: "Wagon Bold";
   color: #d8b1ed;
+  font-size: 1.2em;
 } 
 
 .a-h3:hover{
   font-family: "Wagon ExtraLight";
   font-weight: lighter;
   color: #274e12;
+  font-size: 1.2em;
+
 } 
 
 .a-h4:hover{
   font-family: "Wagon ExtraLightItalic";
   font-weight: lighter;
   color: #004b81;
+  font-size: 1.2em;
 }
 
 /*--------- COLONNE CENTRALE ---------*/
@@ -361,6 +376,10 @@ body {
 
 .zone-texte{
     padding: 10%;
+}
+
+#introduction{
+  margin:0;
 }
     
 /*--------- COLONNE DROITE ---------*/
@@ -395,6 +414,7 @@ body {
   #titre-oeuvres{
     color:#faadde;
     align-self: flex-start;
+    margin:0;
   }
 
   .section-oeuvres img{
