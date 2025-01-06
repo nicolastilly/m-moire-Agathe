@@ -60,6 +60,7 @@ h2{
     color: #d8b1ed;
     font-size: 1.8em;
     margin: 5% 0;
+    scroll-margin-top: 1.5rem;
 }
 
 h3{
@@ -68,6 +69,7 @@ h3{
     color: #274e12;
     font-size: 1.5em;
     margin: 5% 0;
+    scroll-margin-top: 1.5rem;
 }
 
 h4{
@@ -76,6 +78,7 @@ h4{
     color: #004b81;
     font-size: 1.2em;
     margin: 5% 0;
+    scroll-margin-top: 1.5rem;
 }
 
 h5{
@@ -88,7 +91,6 @@ p{
     font-family: "Caladea Regular";
     color: #161b27;
     font-size: 0.8em;
-    margin:0;
     text-align:justify;
     margin: 5% 0;
 }
@@ -171,9 +173,8 @@ body {
 
 .column {
     flex-grow: 1;
-    width: 33.33%; /* Largeur initiale */
+    /*width: 33.33%;  Largeur initiale */
     min-width: 200px;
-
     overflow-x: auto;
     overflow-y: auto;
     background-color: #f5f5f5;
@@ -223,6 +224,7 @@ body {
     flex-direction: column;
     align-items: center; /* Centre horizontalement le contenu */
     justify-content: flex-start; /* Aligne le contenu en haut */
+    width:31.77%;
     height: 100vh;
     position: relative; /* Nécessaire pour positionner le contenu avec `absolute` */
 }
@@ -234,6 +236,20 @@ body {
     font-size: 1.5em;
     margin: 5% 0 0 5%;
     align-self: flex-start;
+    cursor:pointer;
+    z-index: 10;
+}
+
+#titre-sommaire:hover {
+  color:#f5f5f5;
+}
+
+#titre-sommaire.toggle {
+  color:#161b27;
+}
+
+#titre-sommaire.toggle:hover {
+  color:#faadde;
 }
 
 #Calque_1 {
@@ -269,13 +285,70 @@ body {
     stroke:#f5f5f5;
 } */
 
-/* .glow-hover {
+.glow-hover {
     transition: filter 0.3s ease;
 }
 
 .glow-hover:hover {
     filter: url(#glow-effect);
+}
+
+
+/* Détail du sommaire */
+
+
+.sommaire-bis {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  width:100%;
+  height:100%;
+  box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur */
+  /* opacity: 0; */
+  transition: opacity 0.3s ease;
+  background-color: #e9e4d8;
+  padding-top: 15%;
+}
+
+.sommaire-bis.show {
+  display: flex;
+  /* opacity: 1; */
+}
+
+.liste-sommaire{
+  padding: 0 5%;
+  text-align: left;
+}
+
+.liste-sommaire a {
+  display: block;
+  text-decoration: none;
+  font-family: "Caladea Regular";
+  color: #161b27;
+  font-size: 0.8em;
+  margin: 3% 3%;
+}
+
+/* .liste-sommaire a:hover{
+  color:#faadde;
 } */
+
+.a-h2:hover{
+  font-family: "Wagon Bold";
+  color: #d8b1ed;
+} 
+
+.a-h3:hover{
+  font-family: "Wagon ExtraLight";
+  font-weight: lighter;
+  color: #274e12;
+} 
+
+.a-h4:hover{
+  font-family: "Wagon ExtraLightItalic";
+  font-weight: lighter;
+  color: #004b81;
+}
 
 /*--------- COLONNE CENTRALE ---------*/
     
@@ -283,6 +356,7 @@ body {
     /* height: 100vh; */
     /* margin: auto; */
     background-color: #f5f5f5;
+    width:36.46%;
 }
 
 .zone-texte{
@@ -300,6 +374,11 @@ body {
     scroll-margin-top: 2rem;
 } */
 
+.column3{
+  /* height: 100vh; */
+  /* margin: auto; */
+  width:31.77%;
+}
 
 /* Section Oeuvres */
 
