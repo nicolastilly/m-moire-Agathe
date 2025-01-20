@@ -101,6 +101,8 @@ p{
 
 a{
     cursor:pointer;
+    overflow-wrap: break-word; /*coupe les liens trop longs */
+    word-break: break-word; /*pareil mais plus radical, à utiliser qu'en exception*/
   }
   
   .lien{
@@ -113,19 +115,21 @@ a{
     color: #274e12;
     background-color: #e9e4d8;
     text-decoration: none;
+    /* scroll-margin-top: 2rem; */
   }
   
   .artiste{
     color: #ffb47e;
     background-color: #161b27;
     text-decoration: none;
+    /* scroll-margin-top: 2rem; */
   }
   
   .auteur{
     color: #e9e4d8;
     background-color: #274e12;
     text-decoration: none;
-    scroll-margin-top: 2rem;
+    /* scroll-margin-top: 2rem; */
   }
   
   .titre-ouvrage{
@@ -177,7 +181,7 @@ body {
     flex-grow: 1;
     /*width: 33.33%;  Largeur initiale */
     min-width: 200px;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: auto;
     background-color: #f5f5f5;
     /* padding: 1.5rem; */
@@ -198,23 +202,40 @@ body {
 
 /* Gestion du scroll des colonnes */
 
-.column::-webkit-scrollbar {
+.column::-webkit-scrollbar-track {
+    background:#f5f5f5;
+    border-radius: 4px;
+    border-radius: 0;
+}
+
+.column2::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-.column::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.column2::-webkit-scrollbar-thumb {
+    background:#004b81;
     border-radius: 4px;
+    border-radius: 0;
 }
 
-.column::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
+.column2::-webkit-scrollbar-thumb:hover {
+    background:#ffb47e;
 }
 
-.column::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.column3::-webkit-scrollbar {
+  width: 9px;
+  height: 8px;
+}
+
+.column3::-webkit-scrollbar-thumb {
+  background:#274e12;
+  border-radius: 4px;
+  border-radius: 0;
+}
+
+.column3::-webkit-scrollbar-thumb:hover {
+  background:#d8b1ed;
 }
 
 
@@ -535,6 +556,10 @@ padding: 5px 10px;
     color: #faadde;
   }
 
+  .notes{
+    scroll-margin-top: 2rem;
+  }
+
 /* Section Bibliographie */
 
 .section-bibliographie{
@@ -554,7 +579,15 @@ padding: 5px 10px;
     color:#274e12;
   }
 
+  .bibliographie{
+    scroll-margin-top: 2rem;
+  }
+
   .highlight-bibliographie{
     color:white;
     background-color: #004b81;
   }
+
+
+
+/*--------- AVERTISSEMENT POUR SMARTPHONE ---------*/
