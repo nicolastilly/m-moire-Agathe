@@ -58,7 +58,7 @@ h1{
 h2{
     font-family: "Wagon Bold";
     color: #d8b1ed;
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 5% 0;
     scroll-margin-top: 1.5rem;
 }
@@ -67,7 +67,7 @@ h3{
     font-family: "Wagon ExtraLight";
     font-weight: lighter;
     color: #274e12;
-    font-size: 1.5em;
+    font-size: 1.85em;
     margin: 5% 0;
     scroll-margin-top: 1.5rem;
 }
@@ -76,7 +76,7 @@ h4{
     font-family: "Wagon ExtraLightItalic";
     font-weight: lighter;
     color: #004b81;
-    font-size: 1.2em;
+    font-size: 1.7em;
     margin: 5% 0;
     scroll-margin-top: 1.5rem;
 }
@@ -84,15 +84,16 @@ h4{
 h5{
     font-family: "Caladea Bold";
     color:#161b27;
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
 p{
     font-family: "Caladea Regular";
     color: #161b27;
-    font-size: 0.8em;
+    font-size: 1em;
     text-align:justify;
     margin: 5% 0;
+    margin-bottom: 10%;
 }
 
 
@@ -110,6 +111,7 @@ a{
   .titre-oeuvre{
     font-family: "Caladea Italic";
     color: #274e12;
+    background-color: #e9e4d8;
     text-decoration: none;
   }
   
@@ -335,7 +337,7 @@ body {
   text-decoration: none;
   font-family: "Caladea Regular";
   color:#e9e4d8;
-  font-size: 0.8em;
+  font-size: 1em;
   margin: 3% 3%;
 }
 
@@ -347,14 +349,14 @@ body {
 .a-h2:hover{
   font-family: "Wagon Bold";
   color: #d8b1ed;
-  font-size: 1.2em;
+  font-size: 1.5em;
 } 
 
 .a-h3:hover{
   font-family: "Wagon ExtraLight";
   font-weight: lighter;
   color: #274e12;
-  font-size: 1.2em;
+  font-size: 1.5em;
 
 } 
 
@@ -362,17 +364,100 @@ body {
   font-family: "Wagon ExtraLightItalic";
   font-weight: lighter;
   color: #004b81;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /*--------- COLONNE CENTRALE ---------*/
     
-.column2{
-    /* height: 100vh; */
-    /* margin: auto; */
-    background-color: #f5f5f5;
-    width:36.46%;
+.column2 {
+  background-color: #f5f5f5;
+  width: 36.46%; /* Largeur définie dynamiquement */
+  position: relative; /* Nécessaire pour que .zone-menu se réfère à elle */
+  /*display: flex;
+  flex-direction: column;  S'assure que les enfants s'empilent verticalement */
 }
+
+/* MENU DU SOMMAIRE */
+
+
+.zone-menu {
+  position: sticky; /* Se colle en haut de la colonne sans quitter celle-ci */
+  top: 0; /* Colle l’élément au haut de la colonne */
+  background-color: #274e12;
+  padding: 4% 8%;
+  z-index: 10; /* Reste au-dessus des autres éléments */
+  width: 100%; /* Prend toujours la largeur de .column2 */
+  box-sizing: border-box; /* Inclut les paddings dans la largeur */
+}
+
+.box-menu {
+  background-color: white;
+}
+
+.box-menu p{
+margin:0;
+}
+
+
+.menu-h2{
+  font-family: "Wagon Bold";
+  color: #d8b1ed;
+}
+
+.menu-h3{
+  font-family: "Wagon ExtraLight";
+  font-weight: lighter;
+  color:#274e12;
+}
+
+.menu-h4{
+  font-family: "Wagon ExtraLightItalic";
+  font-weight: lighter;
+  color:#004b81;
+}
+
+/* Liens principaux */
+.menu-h2, .menu-h3, .menu-h4 {
+  position: relative; /* Nécessaire pour que les menus déroulants se positionnent par rapport à eux */
+  display: inline-block; /* Assure un comportement correct */
+}
+
+#menu-h2, #menu-h3, #menu-h4 {
+padding: 5px 10px;
+}
+
+/* Conteneur des menus */
+.menu-container {
+  position: relative; /* Contexte pour positionner .dropdown-menu */
+  display: inline-block;
+}
+
+/* Menus déroulants */
+.dropdown-menu {
+  display: none; /* Caché par défaut */
+  position: absolute; /* Permet de positionner le menu par rapport au lien parent */
+  top: 100%; /* Place le menu juste sous le lien parent */
+  left: 0; /* Aligne le menu sur la gauche du lien parent */
+  background-color: #f5f5f5; /* Exemple de style */
+  padding: 5px 10px; /* Espacement interne */
+  border: 1px solid #ccc; /* Bordure pour démarquer le menu */
+  z-index: 10; /* Assure que le menu est au-dessus */
+}
+
+/* Liens dans les menus déroulants */
+.dropdown-menu a {
+  color: #000; /* Couleur du texte dans le menu */
+  text-decoration: none;
+}
+
+/* Affichage des menus au survol */
+.menu-container:hover .dropdown-menu {
+  display: block; /* Affiche le menu lorsqu'on survole le lien parent */
+}
+
+
+
+/* DEFILEMENT DU TEXTE */
 
 .zone-texte{
     padding: 10%;
@@ -429,7 +514,7 @@ body {
     height: auto;
     font-family: "Caladea Regular";
     color: #004b81;
-    font-size: 0.8em;
+    font-size: 0.95em;
   }
 
 
@@ -442,7 +527,7 @@ body {
     background-color: #004b81;
     color: #e9e4d8;
     font-family: "Caladea Regular";
-    font-size: 0.8em;
+    font-size: 0.95em;
     padding: 10%; 
   }
   
@@ -459,8 +544,10 @@ body {
     background-color: #ffb47e;
     color: #004b81;
     font-family: "Caladea Regular";
-    font-size: 0.8em;
+    font-size: 0.95em;
     padding: 10%; 
+    width:100%;
+    box-sizing: border-box;
   }
 
   #titre-bibliographie{
