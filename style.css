@@ -490,7 +490,69 @@ padding: 5px 10px;
     
 /*--------- COLONNE DROITE ---------*/
     
-    /* img {
+
+.column3{
+  /* height: 100vh; */
+  /* margin: auto; */
+  width:31.77%;
+}
+
+/* Animations des styles pour la mise en évidence d'éléments ciblés */
+
+/*État par défaut*/
+.notes, .bibliographie, .descriptions-oeuvres {
+  background-color: transparent;
+  color: inherit;
+  transition: none;
+}
+
+/* Apparition rapide */
+.highlight-appear {
+  transition: background-color 0.75s ease-in, color 0.75s ease-in, box-shadow 0.75s ease-in;
+}
+
+.highlight-appear.notes {
+  background-color: #faadde;
+  color: #f5f5f5;
+  box-shadow: 1px 1px 3px 5px #faadde;/* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
+.highlight-appear.bibliographie {
+  background-color: #004b81;
+  color: #e9e4d8;
+  box-shadow: 1px 1px 3px 5px #004b81;
+}
+
+.highlight-appear.descriptions-oeuvres {
+  background-color: #d8b1ed;
+  color: #161b27;
+  box-shadow: 1px 1px 3px 5px #d8b1ed;
+}
+
+/* Disparition lente */
+.highlight-disappear {
+  background-color: transparent;
+  color: inherit;
+  transition: background-color 2s ease-out, color 2s ease-out, box-shadow 2s ease-out;
+}
+
+.highlight-disappear.notes {
+  background-color: transparent;
+  color: inherit;
+}
+
+.highlight-disappear.bibliographie {
+  background-color: transparent;
+  color: inherit;
+}
+
+.highlight-disappear.descriptions-oeuvres {
+  background-color: transparent;
+  color: inherit;
+}
+
+
+/* img {
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
@@ -499,11 +561,6 @@ padding: 5px 10px;
     scroll-margin-top: 2rem;
 } */
 
-.column3{
-  /* height: 100vh; */
-  /* margin: auto; */
-  width:31.77%;
-}
 
 /* Section Oeuvres */
 

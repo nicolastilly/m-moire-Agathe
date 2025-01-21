@@ -172,8 +172,8 @@
                 <div class="section-oeuvres">
                     <h2 id="titre-oeuvres">Œuvres</h2>
                     
-                    <img id="image1" id="RootBench" src="asset\images\young_ju_leejpg.jpg">
-                    <span class="descriptions-oeuvres">
+                     <img id="image1" src="asset\images\young_ju_leejpg.jpg"> 
+                    <span class="descriptions-oeuvres" id="RootBench">
                         <a class="artiste">Yong Ju Lee</a>, <a class="titre-oeuvre">Root Bench</a>, 2018, structure avec armature en métal et  socle en béton recouverte d’une terrasse en bois, fabrication par Sunjin Plus, Parc Hangang (Séoul), [en ligne], <a class="lien" href="https://www.yongjulee.com/ROOT-BENCH" target=”_blank”>(https://www.yongjulee.com/ROOT-BENCH)</a>.
                     </span>
 
@@ -249,7 +249,7 @@
                     </span>
                     <span class="notes">Elle leur permet de redistribuer les ressources pour favoriser leur partenaire pour se nourrir eux-mêmes en retour. La stabilité évolutive de l'interaction mycorhizienne dépend d’un calcul du coût pour les plantes et d’autres facteurs comme la disponibilité relative des nutriments dans le sol et la nature des organismes impliqués. (<I>ibid.</I>)
                     </span>
-                    <span class="notes" id="YongJuLee"><a class="auteur" href="#image1">Yong Ju Lee</a>, <a class="titre-oeuvre" href="#image1"><I>Root Bench</I></a>, 2018, structure constituée d’une armature en métal et d’un socle en béton recouverte d’une terrasse en bois, fabrication par Sunjin Plus, Parc Hangang dans le quartier Ichon-dong (district Yongsan) de Séoul, [en ligne], <a class="lien" href="https://www.yongjulee.com/ROOT-BENCH">(https://www.yongjulee.com/ROOT-BENCH)</a>.
+                    <span class="notes" id="YongJuLee"><a class="auteur" href="#RootBench">Yong Ju Lee</a>, <a class="titre-oeuvre" href="#RootBench"><I>Root Bench</I></a>, 2018, structure constituée d’une armature en métal et d’un socle en béton recouverte d’une terrasse en bois, fabrication par Sunjin Plus, Parc Hangang dans le quartier Ichon-dong (district Yongsan) de Séoul, [en ligne], <a class="lien" href="https://www.yongjulee.com/ROOT-BENCH">(https://www.yongjulee.com/ROOT-BENCH)</a>.
                     </span>
                     <span class="notes">Cette zone est appelée la rhizosphère.</span>
                     <span class="notes">Cet ouvrage a été rédigé par Ramon Llull, mais publié à titre posthume en 1515 par l'éditeur F. Fradin. L'illustration de l'<I>« Arbor Scientiae »</I> reprend les notions de Lull dans l'Ars Magna mais il n'en est pas le créateur.</span>
@@ -302,41 +302,51 @@
             });
             });
 
-        //apparition du détail du sommaire
-            // Récupérer les éléments
-            const titreSommaire = document.getElementById("titre-sommaire");
-            const sommaireBis = document.querySelector(".sommaire-bis");
-            titreSommaire.addEventListener("click", () => {
-                const isVisible = sommaireBis.style.display === "flex";
-                sommaireBis.style.display = isVisible ? "none" : "flex"; // Basculer l'affichage
-                titreSommaire.classList.toggle("toggle", !isVisible); // Ajouter ou supprimer la classe
-            });
+        // //apparition du détail du sommaire
+        //     // Récupérer les éléments
+        //     const titreSommaire = document.getElementById("titre-sommaire");
+        //     const sommaireBis = document.querySelector(".sommaire-bis");
+        //     titreSommaire.addEventListener("click", () => {
+        //         const isVisible = sommaireBis.style.display === "flex";
+        //         sommaireBis.style.display = isVisible ? "none" : "flex"; // Basculer l'affichage
+        //         titreSommaire.classList.toggle("toggle", !isVisible); // Ajouter ou supprimer la classe
+        //     });
 
 
-            //Scroll depuis les liens vers les éléments ciblés
-            document.addEventListener('DOMContentLoaded', function () {
-                // Gestion des clics sur les liens
-                document.querySelectorAll('.image-link').forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
 
-                        // Récupère l'ID de l'image cible
-                        const targetId = this.getAttribute('href').substring(1);
-                        const targetImage = document.getElementById(targetId);
+        /* Scroll depuis les liens vers les éléments ciblés + animations des highlight */
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-                        // Défilement vers l'image
-                        targetImage.scrollIntoView();
+                    // Récupération de l'ID cible à partir du href
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
 
-                        // Ajoute l'effet de mise en évidence
-                        targetImage.classList.add('highlight');
+                    if (targetElement) {
+                        // Scroll vers l'élément cible
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-                        // Retire l'effet après l'animation
+                        // Réinitialiser les classes pour éviter les conflits
+                        targetElement.classList.remove('highlight-appear', 'highlight-disappear');
+
+                        // Ajouter la classe pour l'apparition rapide
+                        targetElement.classList.add('highlight-appear');
+
+                        // Attente de 3 secondes avant d'ajouter la classe de disparition
                         setTimeout(() => {
-                            targetImage.classList.remove('highlight');
-                        }, 500);
-                    });
+                            // Retirer la classe d'apparition et ajouter celle de disparition
+                            targetElement.classList.remove('highlight-appear');
+                            targetElement.classList.add('highlight-disappear');
+                        }, 1750); // 1.75 secondes de pause avant la disparition
+                    }
                 });
             });
+        });
+
+
 
             /* script du resize */
 
@@ -352,7 +362,7 @@
 
     const minColumnWidth = 200; // Largeur minimale des colonnes
 
-    // Fonction pour désactiver la sélection
+    // Fonction pour désactiver la sélection d'autres éléments lors du resize
     function disableSelection() {
         document.body.style.userSelect = 'none';
         document.body.style.webkitUserSelect = 'none';  // Pour les navigateurs basés sur WebKit
