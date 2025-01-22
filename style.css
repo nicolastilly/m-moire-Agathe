@@ -646,5 +646,29 @@ padding: 5px 10px;
   }
 
 
+  /* Section Credits */
+
+  .section-credits{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    background-color:#343332;
+    color: #e9e4d8;
+    font-family: "Caladea Regular";
+    font-size: 0.95em;
+    padding: 10%; 
+    width:100%;
+    box-sizing: border-box;
+  }
+
+  #titre-credits{
+    color: #ffb47e;
+  }
+
+  .sous-titres-credits{
+    color: #ffb47e;
+    margin-bottom:0;
+  }
+
 
 /*--------- AVERTISSEMENT POUR SMARTPHONE ---------*/
