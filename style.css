@@ -223,6 +223,10 @@ body {
     background:#ffb47e;
 }
 
+.column2.scroll-active::-webkit-scrollbar-thumb {
+  background: #ffb47e;
+}
+
 .column3::-webkit-scrollbar {
   width: 9px;
   height: 8px;
@@ -238,6 +242,9 @@ body {
   background:#d8b1ed;
 }
 
+.column3.scroll-active::-webkit-scrollbar-thumb {
+  background: #d8b1ed;
+}
 
 /*--------- COLONNE GAUCHE ---------*/
 
@@ -252,7 +259,7 @@ body {
     position: relative; /* Nécessaire pour positionner le contenu avec `absolute` */
 }
 
-#titre-sommaire {
+/* #titre-sommaire {
     font-family: "Wagon ExtraLight";
     font-weight: lighter;
     color: #e9e4d8;
@@ -273,7 +280,7 @@ body {
 
 #titre-sommaire.toggle:hover {
   color:#faadde;
-}
+} */
 
 #Calque_1 {
     position: absolute; /* positionnement indépendamment */
@@ -329,64 +336,27 @@ body {
 /* Détail du sommaire */
 
 
-.sommaire-bis {
+/* .sommaire-bis {
   display: none;
   position: absolute;
   flex-direction: column;
   width:100%;
   height:100%;
-  box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur */
-  /* opacity: 0; */
+  box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur
   transition: opacity 0.3s ease;
   background-color:#343332;
   padding-top: 10%;
-  /* opacity:0.75; */
 }
 
 .sommaire-bis.show {
   display: flex;
-  /* opacity: 1; */
-}
-
-.liste-sommaire{
-  padding: 0 5%;
-  text-align: left;
-}
-
-.liste-sommaire a {
-  display: block;
-  text-decoration: none;
-  font-family: "Caladea Regular";
-  color:#e9e4d8;
-  font-size: 1em;
-  margin: 3% 3%;
-}
+}*/
 
 /* .liste-sommaire a:hover{
   color:#faadde;
 } */
 
 
-.a-h2:hover{
-  font-family: "Wagon Bold";
-  color: #d8b1ed;
-  font-size: 1.5em;
-} 
-
-.a-h3:hover{
-  font-family: "Wagon ExtraLight";
-  font-weight: lighter;
-  color: #274e12;
-  font-size: 1.5em;
-
-} 
-
-.a-h4:hover{
-  font-family: "Wagon ExtraLightItalic";
-  font-weight: lighter;
-  color: #004b81;
-  font-size: 1.5em;
-}
 
 /*--------- COLONNE CENTRALE ---------*/
     
@@ -404,23 +374,67 @@ body {
 .zone-menu {
   position: sticky; /* Se colle en haut de la colonne sans quitter celle-ci */
   top: 0; /* Colle l’élément au haut de la colonne */
-  background-color: #274e12;
-  padding: 4% 8%;
-  z-index: 10; /* Reste au-dessus des autres éléments */
-  width: 100%; /* Prend toujours la largeur de .column2 */
+  background-color: #f5f5f5;
+  /* border: 1px solid #161b27; */
+  box-shadow: 0px 2px 8px #e9e4d8;
+  padding: 3% 10%;
+  z-index: 10;
+  width: 100%;
   box-sizing: border-box; /* Inclut les paddings dans la largeur */
+  display: flex;
+  align-items: center;
 }
 
 .box-menu {
   background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 5%;
+  cursor: pointer;
 }
 
 .box-menu p{
 margin:0;
 }
 
+#titre-sommaire{
+  font-family: "Wagon ExtraLight";
+    font-weight: lighter;
+    color: #faadde;
+    font-size: 1.2em;
+}
 
-.menu-h2{
+#titre-actif-menu {
+  font-family: "Wagon ExtraLightItalic";
+  font-weight: lighter;
+  color: #161b27;
+  font-size: 1em;
+  white-space: nowrap; /* Texte sur une seule ligne */
+  overflow: hidden; /* Cache le texte qui dépasse */
+  text-overflow: ellipsis; /* Affiche "..." si le texte dépasse */
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%; /* Empêche le titre de dépasser la largeur de son conteneur */
+}
+
+/* Menus déroulants */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  top: 100%;
+  left: 0;
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  z-index: 10;
+  overflow-y: scroll;
+  max-height: 92vh; /* Hauteur maximale pour activer le scroll */
+}
+
+/* .menu-h2{
   font-family: "Wagon Bold";
   color: #d8b1ed;
 }
@@ -437,51 +451,123 @@ margin:0;
   color:#004b81;
 }
 
-/* Liens principaux */
+
 .menu-h2, .menu-h3, .menu-h4 {
-  position: relative; /* Nécessaire pour que les menus déroulants se positionnent par rapport à eux */
-  display: inline-block; /* Assure un comportement correct */
-}
+  /*position: relative;  Nécessaire pour que les menus déroulants se positionnent par rapport à eux 
+  display: inline-block;
 
 #menu-h2, #menu-h3, #menu-h4 {
 padding: 5px 10px;
-}
+} */
 
-/* Conteneur des menus */
+/* Conteneur des menus 
 .menu-container {
-  position: relative; /* Contexte pour positionner .dropdown-menu */
-  display: inline-block;
-}
+  position: relative; /* Contexte pour positionner .dropdown-menu 
+  display: flex;
+  align-items: center;
+}*/
 
-/* Menus déroulants */
-.dropdown-menu {
-  display: none; /* Caché par défaut */
-  position: absolute; /* Permet de positionner le menu par rapport au lien parent */
-  top: 100%; /* Place le menu juste sous le lien parent */
-  left: 0; /* Aligne le menu sur la gauche du lien parent */
-  background-color: #f5f5f5; /* Exemple de style */
-  padding: 5px 10px; /* Espacement interne */
-  border: 1px solid #ccc; /* Bordure pour démarquer le menu */
-  z-index: 10; /* Assure que le menu est au-dessus */
-}
 
-/* Liens dans les menus déroulants */
+/* .current-title {
+  color: #ff6600; /* Couleur distinctive du titre de la zone lue en temps réel 
+  font-weight: bold;
+} */
+
+
+
+/* Liens dans les menus déroulants 
 .dropdown-menu a {
-  color: #000; /* Couleur du texte dans le menu */
+  color: #000;
   text-decoration: none;
-}
+}*/
 
 /* Affichage des menus au survol */
-.menu-container:hover .dropdown-menu {
-  display: block; /* Affiche le menu lorsqu'on survole le lien parent */
+.box-menu:hover .dropdown-menu {
+  display: block; /* Affiche le menu déroulant au survol */
 }
+
+.liste-sommaire{
+  padding: 0 5%;
+  text-align: left;
+  flex-direction: column;
+}
+
+.liste-sommaire a {
+  display: block;
+  text-decoration: none;
+  font-family: "Caladea Regular";
+  color:#161b27;
+  font-size: 1em;
+  margin: 3% 3%;
+}
+
+.a-h2:hover{
+  /* font-family: "Wagon Bold"; */
+  color: #d8b1ed;
+  /* font-size: 1.5em; */
+} 
+
+.a-h3:hover{
+  /* font-family: "Wagon ExtraLight";
+  font-weight: lighter; */
+  color: #274e12;
+  /* font-size: 1.5em; */
+
+} 
+
+.a-h4:hover{
+  /* font-family: "Wagon ExtraLightItalic";
+  font-weight: lighter; */
+  color: #004b81;
+  /* font-size: 1.5em; */
+}
+
+.divider{
+  border-top: 1px solid #161b27;
+}
+
+
+/* Gestion des barres de scroll du menu déroulant */
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background:#f5f5f5;
+  border-radius: 4px;
+  border-radius: 0;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background:#ffb47e;
+  border-radius: 4px;
+  border-radius: 0;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background:#faadde;
+}
+
+.dropdown-menu.scroll-active::-webkit-scrollbar-thumb {
+  background: #faadde;
+}
+
+.box-menu:hover .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+} /*assure que le menu reste affiché tant que l'on intéragit avec*/
+
+
+
 
 
 
 /* DEFILEMENT DU TEXTE */
 
 .zone-texte{
-    padding: 10%;
+    padding: 7% 10% 5% 10%;
 }
 
 #introduction{
