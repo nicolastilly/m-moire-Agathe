@@ -90,7 +90,7 @@ h5{
 p{
     font-family: "Caladea Regular";
     color: #161b27;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align:justify;
     margin: 5% 0;
     margin-bottom: 10%;
@@ -400,18 +400,18 @@ margin:0;
 }
 
 #titre-sommaire{
-  font-family: "Wagon ExtraLight";
-    font-weight: lighter;
-    color: #faadde;
+  font-family: "Wagon Bold";
+    /* font-weight: lighter; */
+    color: #274e12 /*#faadde*/;
     font-size: 1.2em;
 }
 
 #titre-actif-menu {
-  background-color: #f5f5f5;
-  box-shadow: /*inset 0px 5px 10px #faadde,*/ 0px 2px 5px #faadde;;
-  font-family: "Wagon ExtraLightItalic";
-  font-weight: lighter;
-  color: #161b27;
+  background-color: #e9e4d8;
+  /* box-shadow: inset 0px 5px 10px #faadde, 0px 2px 5px #faadde; */
+  font-family: "Caladea Regular" /*"Wagon ExtraLightItalic"*/;
+  /* font-weight: lighter; */
+  color: #343332 /*#274e12*/;
   font-size: 1em;
   white-space: nowrap; /* Texte sur une seule ligne */
   overflow: hidden; /* Cache le texte qui dépasse */
@@ -422,6 +422,7 @@ margin:0;
   max-width: 100%; /* Évite que le titre dépasse de la boîte */
   box-sizing: border-box;
   position: absolute; /* Permet au titre de ne pas influencer la taille du conteneur */
+  padding: 0 1%;
 }
 
 /* Menus déroulants */
@@ -433,7 +434,7 @@ margin:0;
   top: 100%; /* Peut être ajusté pour mieux aligner le dropdown */
   left: 0;
   margin-top: 0.6em;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5/*#e9e4d8*/;
   padding: 5px 10px;
   z-index: 10; /* Augmenter z-index pour garantir que le menu est au-dessus d'autres éléments */
   overflow-y: scroll;
@@ -505,7 +506,7 @@ padding: 5px 10px;
   display: block;
   text-decoration: none;
   font-family: "Caladea Regular";
-  color:#161b27;
+  color:#343332 /*#004b81*/;
   font-size: 1em;
   margin: 3% 3%;
 }
@@ -766,4 +767,83 @@ padding: 5px 10px;
   }
 
 
-/*--------- AVERTISSEMENT POUR SMARTPHONE ---------*/
+/*--------- AVERTISSEMENT POUR PETITE TAILLE D'ECRAN ---------*/
+
+#avertissement {
+  display: none;
+}
+
+  @media screen and (max-width: 1024px) {
+    
+    * {
+      box-sizing: border-box; /* Empêche les marges ou bordures d'élargir un élément */
+    }
+    
+    /* Désactive complètement le scroll */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Empêche le défilement horizontal et vertical */
+      width: 100%; /* Empêche les dépassements horizontaux */
+      height: 100%; /* Empêche les dépassements verticaux */
+    }
+  
+    body {
+      position: relative; /* S'assure que le positionnement fixe fonctionne correctement */
+    }
+
+    /* Bloc couvrant tout l'écran */
+    #avertissement {
+      display: flex; /* Pour centrer le contenu */
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* Largeur totale de l'écran */
+      height: 100vh; /* Hauteur totale de l'écran */
+      background-color: #343332;
+      z-index: 50;
+      overflow: hidden;
+      /*max-width: 100vw;  Empêche tout dépassement horizontal */
+    }
+  
+    .titre-avertissement{
+      font-family: "Wagon Bold";
+      font-size: 1.5em;
+      color: #d8b1ed;
+      background-color: #161b27;
+      margin: 0 3em;
+    }
+
+    #sous-titre-avertissement{
+      font-family: "Caladea Regular";
+      font-size: 1em;
+      color: #e9e4d8;
+      margin: 0;
+      padding: 3em;
+    }
+
+    .texte-avertissement {
+      font-family: "Caladea Regular", serif;
+      font-size: 1.2em;
+      color: #f5f5f5;
+      text-align:left;
+      padding: 0;
+      margin: 0 3em;
+    }
+
+    #footer-avertissement{
+      font-family: "Caladea Regular";
+      color: #e9e4d8;
+      bottom: 5vh;
+      font-size: 1em;
+      align-items: center;
+      text-align:center;
+      margin: 0 3em;
+    }
+
+  }
+  
+
