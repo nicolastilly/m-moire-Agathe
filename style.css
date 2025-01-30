@@ -144,6 +144,11 @@ a{
     /* background-color: #faadde; */
   }
 
+  .fig{
+    color:#d8b1ed;
+    background-color: #343332;
+    text-decoration: none;
+  }
 
 /*--------- GENERAL ---------*/
 
@@ -193,12 +198,30 @@ body {
 .resizer {
     width: 1px;
     background-color: #a4a4a4;
-    cursor: ew-resize;
+    /* cursor: ew-resize; */
+    /* cursor: grab; */
+    /* cursor: col-resize; */
+    /* cursor: url('asset/images/custom-cursor.png') 32 32, auto; */
     position: relative;
     z-index: 1; /* S'assurer qu'ils sont au-dessus des colonnes */
     height: 100%; /* S'étend sur toute la hauteur de la colonne */
 }
 
+/* .resizer::before {
+  content: "";
+  position: absolute;
+  left: -10px;  Agrandit la zone à gauche 
+  right: -10px;  Agrandit la zone à droite
+  z-index: 0; Place le pseudo-élément derrière le contenu
+} */
+
+/* .custom-cursor {
+  
+}
+
+.custom-cursor:hover {
+  transform: scale(1.1);
+} */
 
 /* Gestion du scroll des colonnes */
 
@@ -259,29 +282,6 @@ body {
     position: relative; /* Nécessaire pour positionner le contenu avec `absolute` */
 }
 
-/* #titre-sommaire {
-    font-family: "Wagon ExtraLight";
-    font-weight: lighter;
-    color: #e9e4d8;
-    font-size: 1.5em;
-    margin: 5% 0 0 5%;
-    align-self: flex-start;
-    cursor:pointer;
-    z-index: 10;
-}
-
-#titre-sommaire:hover {
-  color:#f5f5f5;
-}
-
-#titre-sommaire.toggle {
-  color:#e9e4d8;
-}
-
-#titre-sommaire.toggle:hover {
-  color:#faadde;
-} */
-
 #Calque_1 {
     position: absolute; /* positionnement indépendamment */
     top: 50%;
@@ -333,30 +333,6 @@ body {
 }
 
 
-/* Détail du sommaire */
-
-
-/* .sommaire-bis {
-  display: none;
-  position: absolute;
-  flex-direction: column;
-  width:100%;
-  height:100%;
-  box-sizing: border-box; /* Inclut le padding dans le calcul de la hauteur
-  transition: opacity 0.3s ease;
-  background-color:#343332;
-  padding-top: 10%;
-}
-
-.sommaire-bis.show {
-  display: flex;
-}*/
-
-/* .liste-sommaire a:hover{
-  color:#faadde;
-} */
-
-
 
 /*--------- COLONNE CENTRALE ---------*/
     
@@ -374,7 +350,7 @@ body {
 .zone-menu {
   position: sticky;
   top: 0;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 /*#e9e4d8*/;
   box-shadow: 0px 2px 8px #e9e4d8;
   padding: 3% 10%;
   width: 100%;
@@ -384,7 +360,7 @@ body {
 }
 
 .box-menu {
-  background-color: #f5f5f5;
+  /* background-color:   #e9e4d8; */
   position: relative;
   display: flex;
   align-items: center;
@@ -407,7 +383,7 @@ margin:0;
 }
 
 #titre-actif-menu {
-  background-color: #e9e4d8;
+  background-color: #e9e4d8 /*#f5f5f5*/;
   /* box-shadow: inset 0px 5px 10px #faadde, 0px 2px 5px #faadde; */
   font-family: "Caladea Regular" /*"Wagon ExtraLightItalic"*/;
   /* font-weight: lighter; */
@@ -441,54 +417,6 @@ margin:0;
   max-height: 92vh;
   box-shadow: 0px 5px 8px #e9e4d8;
 }
-
-
-/* .menu-h2{
-  font-family: "Wagon Bold";
-  color: #d8b1ed;
-}
-
-.menu-h3{
-  font-family: "Wagon ExtraLight";
-  font-weight: lighter;
-  color:#274e12;
-}
-
-.menu-h4{
-  font-family: "Wagon ExtraLightItalic";
-  font-weight: lighter;
-  color:#004b81;
-}
-
-
-.menu-h2, .menu-h3, .menu-h4 {
-  /*position: relative;  Nécessaire pour que les menus déroulants se positionnent par rapport à eux 
-  display: inline-block;
-
-#menu-h2, #menu-h3, #menu-h4 {
-padding: 5px 10px;
-} */
-
-/* Conteneur des menus 
-.menu-container {
-  position: relative; /* Contexte pour positionner .dropdown-menu 
-  display: flex;
-  align-items: center;
-}*/
-
-
-/* .current-title {
-  color: #ff6600; /* Couleur distinctive du titre de la zone lue en temps réel 
-  font-weight: bold;
-} */
-
-
-
-/* Liens dans les menus déroulants 
-.dropdown-menu a {
-  color: #000;
-  text-decoration: none;
-}*/
 
 /* Affichage des menus au survol */
 .box-menu:hover .dropdown-menu {
@@ -570,10 +498,6 @@ padding: 5px 10px;
 } /*assure que le menu reste affiché tant que l'on intéragit avec*/
 
 
-
-
-
-
 /* DEFILEMENT DU TEXTE */
 
 .zone-texte{
@@ -583,7 +507,9 @@ padding: 5px 10px;
 #introduction{
   margin:0;
 }
-    
+   
+
+
 /*--------- COLONNE DROITE ---------*/
     
 
@@ -598,7 +524,7 @@ padding: 5px 10px;
 /*État par défaut*/
 .notes, .bibliographie, .descriptions-oeuvres {
   background-color: transparent;
-  color: inherit;
+  /* color: inherit; */
   transition: none;
 }
 
@@ -625,10 +551,16 @@ padding: 5px 10px;
   box-shadow: 1px 1px 3px 5px #d8b1ed;
 }
 
+.highlight-appear.descriptions-credits {
+  background-color: #ffb47e;
+  color: #f5f5f5;
+  box-shadow: 1px 1px 3px 5px #ffb47e;
+}
+
 /* Disparition lente */
 .highlight-disappear {
-  background-color: transparent;
-  color: inherit;
+  /* background-color: transparent;
+  color: inherit; */
   transition: background-color 2s ease-out, color 2s ease-out, box-shadow 2s ease-out;
 }
 
@@ -647,15 +579,10 @@ padding: 5px 10px;
   color: inherit;
 }
 
-
-/* img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    display: block;
-    scroll-margin-top: 2rem;
-} */
+.highlight-disappear.descriptions-credits {
+  background-color: transparent;
+  color: inherit;
+}
 
 
 /* Section Oeuvres */
@@ -764,6 +691,21 @@ padding: 5px 10px;
   .sous-titres-credits{
     color: #ffb47e;
     margin-bottom:0;
+  }
+
+  .section-credits p{
+    /* display: flex;
+    flex-direction: column; */
+    text-align:left;
+    gap: 1vw;
+    background-color:#343332;
+    color: #e9e4d8;
+    font-family: "Caladea Regular";
+    font-size: 0.95em;
+    /* padding: 10%;  */
+    width:100%;
+    box-sizing: border-box;
+    margin: 0;
   }
 
 
